@@ -101,6 +101,18 @@ public final class DropDown: UIView {
     }()
 
 
+    public var borderColor: UIColor = .clear {
+        didSet {
+            tableView.layer.borderColor = borderColor.cgColor
+        }
+    }
+
+    public var borderWidth: CGFloat = 0.0 {
+        didSet {
+            tableView.layer.borderWidth = borderWidth
+        }
+    }
+    
 	/// The view to which the drop down will displayed onto.
 	public weak var anchorView: AnchorView? {
 		didSet { setNeedsUpdateConstraints() }
